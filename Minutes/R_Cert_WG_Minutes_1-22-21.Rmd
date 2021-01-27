@@ -1,0 +1,16 @@
+---
+title: "MInutes_1_22_2021_Meeting"
+author: "Joseph Rickert"
+date: "1/26/2021"
+output: html_document
+---
+Minutes by Joseph Rickert
+
+Attendees:
+* Joseph Rickert
+* Mehar Pratap Singh
+* Katherine M Ostbye
+
+The group met to discuss the new direction and mission of the R Certification Group and set the following milestones:
+1 Relaunch the working group at the upcoming Pharma SUG meeting
+2 Develop a workshop for the R/Pharma 2021 conference.
