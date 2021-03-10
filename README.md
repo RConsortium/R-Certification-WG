@@ -4,4 +4,5 @@ Topics will include:
 * FDA CDISC Standards
 * Relevant SAS and R data structures
 * The basics of managing SAS and R environments 
+* Reporting methods in SAS and R
 * Developing tests to compare the results of SAS and R analyses.
