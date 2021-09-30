@@ -1,0 +1,166 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+## R Cert Working Group-Modeling
+### Joseph Korszun
+
+## Library references
+```{r, results=FALSE, message=FALSE}
+#library references
+library("gtsummary")
+library("utils")
+library("dplyr")
+library("car")
+library("lme4")
+
+#set working directory
+setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
+
+#load data into R
+load('adsl.Rdata')
+
+#any of these below options 
+View(adsl)
+head(adsl)
+summary(adsl)
+```
+
+## Aggregation Summaries
+```{r, results=TRUE}
+## Aggregation Summaries
+group_by(adsl, SEX) %>%
+  summarise(
+    count = n(),
+    mean = mean(AGE, na.rm = TRUE),
+    sd = sd(AGE, na.rm = TRUE)
+  )
+
+```
+
+## Continuous Table summaries
+```{r, results=TRUE}
+#Continuous-Table summaries
+sub.df <- adsl %>% select(TRT01A, AGE, SEX)
+sub.df %>% tbl_summary(by=TRT01A, statistic = list(all_continuous() ~ "{mean} ({sd})",
+                       all_categorical() ~ "{n}/{N} ({p}%)"),
+                       digits = all_continuous() ~ 2) %>%
+  add_p(pvalue_fun = ~style_pvalue(.x, digits = 2))
+```
+
+## Cross Tabulation Summarie
+```{r, results=TRUE}
+#Cross Tabulation Summaries
+adsl %>%
+  tbl_cross(
+    row = SEX,
+    col = TRT01A,
+    percent = "cell"
+  ) %>%
+  add_p()
+```
+
+## T-tests
+```{r, results=TRUE}
+## T-tests
+adsl.t <- t.test(adsl$TRTDURD, y=NULL, alternative = c("two.sided"), mu=0, paired=FALSE,
+       var.equal = FALSE, conf.level = 0.95)
+# T-test output
+adsl.t
+```
+
+## ANOVA
+```{r, results=TRUE}
+## ANOVA
+adsl.aov <- aov(TRTDURD ~ TRT01A, data = adsl)
+
+#summary
+summary(adsl.aov)
+
+#Tukey HSD Test for pairwise summary
+TukeyHSD(adsl.aov)
+
+#residual plots for homogeneity 
+plot(adsl.aov, 1)
+
+#normality assumption met
+plot(adsl.aov, 2)
+
+#Pull residual data
+adsl_residuals <- residuals(object=adsl.aov)
+
+#Shapiro-Wilkes Test, normality not met
+shapiro.test(x = adsl_residuals)
+```
+
+## Statistical Tests
+```{r, results=TRUE, warning=FALSE}
+## Statistical Tests
+
+#Levene's Test for Equal Variances
+leveneTest(AGE ~ TRT01A, data = adsl)
+
+
+
+```
+
+## General Linear Modeling
+```{r, results=TRUE}
+## General Linear Modeling
+
+
+```
+
+## Mixed-Modeling
+```{r, results=TRUE}
+## Mixed-Modeling
+
+
+```
+
+## Likelihood Estimates
+```{r, results=TRUE}
+## Likelihood Estimates 
+
+
+```
+
+## Survival Analysis
+```{r, results=TRUE}
+## Survival Analysis
+
+
+```
+
+## Covariate Adjustments
+```{r, results=TRUE}
+## Covariate Adjustments
+
+
+```
+
+## Sequential and Interim Analysis
+```{r, results=TRUE}
+## Sequential and Interim Analysis
+
+
+```
+
+## Bayesian Analysis
+```{r, results=TRUE}
+## Bayesian Analysis
+
+
+```
+
+## Experimental Design
+```{r, results=TRUE}
+## Experimental Design
+
+
+```
+
+
+
+
