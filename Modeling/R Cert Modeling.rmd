@@ -9,11 +9,13 @@ output:
 ## Library references
 ```{r, results=FALSE, message=FALSE}
 #library references
-library("gtsummary")
-library("utils")
+library("gtsummary") #tabulation summary
+library("utils") 
 library("dplyr")
-library("car")
-library("lme4")
+library("car") #levene test
+library("haven") #sas datasets xpt
+library("lme4") #mixed-effect modeling
+library("survival") #survival
 
 #set working directory
 setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
@@ -21,10 +23,26 @@ setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
 #load data into R
 load('adsl.Rdata')
 
+#load submissions group data 
+adqs <- read_xpt("adqsadas.xpt") #linear model
+adqsnpix <- read_xpt("adqsnpix.xpt") #mixed-effects model
+
 #any of these below options 
 View(adsl)
 head(adsl)
 summary(adsl)
+
+
+```
+
+## Descriptive Statistics
+```{r, results=TRUE, warning=FALSE}
+#descriptive statistics
+#this package should be considered?
+#better alternative?
+library('psych')
+describe(adqs)
+
 ```
 
 ## Aggregation Summaries
@@ -101,6 +119,8 @@ shapiro.test(x = adsl_residuals)
 #Levene's Test for Equal Variances
 leveneTest(AGE ~ TRT01A, data = adsl)
 
+#Fisher exact test
+
 
 
 ```
@@ -109,12 +129,67 @@ leveneTest(AGE ~ TRT01A, data = adsl)
 ```{r, results=TRUE}
 ## General Linear Modeling
 
+#subset data
+glm_sub <- filter(adqs,EFFFL == 'Y' & AVISIT == 'Week 24' & PARAMCD == 'ACTOT') 
 
+#build general linear model  
+linear_model <- glm(CHG ~ TRTPN + SITEGR1, data = glm_sub)
+
+#coefficients
+linear_model$coefficients
+
+#summary of results
+summary(linear_model)
+
+#95% confidence intervals for weights 
+confint(linear_model)
+
+#orthogonal effects 
+effects <-linear_model$effects
+
+#predicted values 
+predicted_values <- predict(linear_model, type='response')
+#linear_model$fitted.values
+
+#print out residuals of response
+residual_data <- residuals(linear_model, type='response')
+#linear_model$residuals
+
+#residual and predicted plots
+plot(predicted_values, main = "Predicted Values")
+plot(residual_data, main = "Residuals")
 ```
 
 ## Mixed-Modeling
 ```{r, results=TRUE}
 ## Mixed-Modeling
+#page 11 of 240
+mlm_sub <- filter(adqsnpix,EFFFL == 'Y' & AVISITN > 0 & PARAMCD == 'NPTOTMN' & ANL01FL=='Y') 
+
+#mixed-model with site effects
+melm <- lmer(AVAL~ (1|SITEGR1)+BASE+TRTPN,data=mlm_sub, REML = FALSE) #BASE dose for levels
+
+#summary
+summary(melm)
+
+#confidence intervals
+confint(melm)
+
+#random effects
+ranef(melm)
+
+#anova for melm
+anova(melm)
+
+#residuals
+melm_res <- residuals(melm)
+
+#predictions
+melm_pred <- predict(melm)
+
+#plots
+plot(melm_res, main = "MELM Rediduals")
+plot(melm_pred, main = "MELM Predicted")
 
 
 ```
@@ -161,6 +236,15 @@ leveneTest(AGE ~ TRT01A, data = adsl)
 
 ```
 
+
+## References/Tutorials
+```{r, results=TRUE}
+## References/Tutorials
+
+
+
+
+```
 
 
 
