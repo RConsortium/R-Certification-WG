@@ -16,6 +16,8 @@ library("car") #levene test
 library("haven") #sas datasets xpt
 library("lme4") #mixed-effect modeling
 library("survival") #survival
+library("FrF2") #DOE
+library("rsm") #DOE
 
 #set working directory
 setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
@@ -192,18 +194,18 @@ plot(melm_res, main = "MELM Rediduals")
 plot(melm_pred, main = "MELM Predicted")
 
 
+#Differences between R and SAS for mixed-effect modeling 
+
+
+
 ```
 
 ## Likelihood Estimates
 ```{r, results=TRUE}
 ## Likelihood Estimates 
 
+#Binomial Likelihood
 
-```
-
-## Survival Analysis
-```{r, results=TRUE}
-## Survival Analysis
 
 
 ```
@@ -222,9 +224,29 @@ plot(melm_pred, main = "MELM Predicted")
 
 ```
 
+## Survival Analysis
+```{r, results=TRUE}
+## Survival Analysis
+
+## packages for consideration: survival, 
+
+## Weibull survival model
+
+
+```
+
+
 ## Bayesian Analysis
 ```{r, results=TRUE}
 ## Bayesian Analysis
+
+# packages for consideration: RJAGS, rstanarm, rstan, brms
+
+#Bayesian Power and Sample Size Tables
+
+#Markov Chain Monte Carlo (MCMC)
+
+
 
 
 ```
@@ -233,18 +255,74 @@ plot(melm_pred, main = "MELM Predicted")
 ```{r, results=TRUE}
 ## Experimental Design
 
+## packages for consideration: FrF2, rsm
+
+##Full Factorial Design
+rm(list=ls())
+set.seed(12556)
+x <- FrF2::FrF2(nruns=16,nfactors=4, factor.names=paste("x",1:4,sep=""), ncenter=3, randomize=F) #design should be randomized
+
+x <- as.data.frame(x)
+x <- x[order(runif(nrow(x))),]
+x.uncoded <- data.frame(rsm::coded.data(x,temp~ 50*x1+100, cat~4*x2+4, stirrer~100*x3+100, conc~10*x4+10))# uncode
+cbind(x,x.uncoded)  # plot coded + uncoded design
+
+
+kappa(model.matrix(~(x1+x2+x3+x4)^2, data=x)) # kappa coded 
+
+kappa(model.matrix(~(temp +cat +stirrer+ conc)^2, data=x.uncoded)) # kappa uncoded
+
+kappa(model.matrix(~(temp +cat +stirrer+ conc)^2, data=data.frame(scale(x.uncoded)))) 
+
+
+
+# kappa on standardized uncoded data
+set.seed(1234)
+x$y  <- 10 + 2*x$x1 + 3*x$x2 + 5*x$x1*x$x2 + 5*x$x3^2 + rnorm(nrow(x),0,1)
+round(cor(model.matrix(~x1+x2+x3+x4+I(x1^2)+I(x2^2)+I(x3^2)+I(x4^2),data=x)[,-1]),2) # note confounding X^2
+
+
+#Summary Statistics
+summary(res1 <- lm(y~(x1+x2+x3+x4)^2, data=x))
+summary(res2 <- lm(y~(x1+x2+x3+x4)^2 + I(x1^2), data=x))
+summary(res3 <- lm(y~(x1+x2+x3+x4)^2 + I(x4^2), data=x))
+
+
+#plotting visuals 
+colcol<- rep("black",nrow(x))
+colcol[apply(abs(x[,1:4]),1,sum)==0]  <- "red"
+par(mfrow=c(1,2))
+
+plot(predict(res1), rstudent(res1), xlab=expression( paste("predicted response ", hat(y))), ylab="studentized residuals",type="n", 
+     main=expression(paste("(",frac(paste("y - ", hat(y)),sigma), ") ~ ", hat(y)))) 
+text(predict(res1), rstudent(res1),label=1:nrow(x), col=colcol) 
+abline(h=c(-2,0,2),lty=c(2,1,2))
+
+plot(predict(res2), rstudent(res2), xlab=expression( paste("predicted response ", hat(y)) ),ylab="studentized residuals",type="n", 
+     main=expression(paste("(",frac(paste("y - ", hat(y)),sigma), ") ~ ", hat(y))))
+text(predict(res2), rstudent(res2),label=1:nrow(x), col=colcol)
+abline(h=c(-2,0,2),lty=c(2,1,2))
+
 
 ```
 
 
+
 ## References/Tutorials
-```{r, results=TRUE}
-## References/Tutorials
 
 
+### DOE
+[DOE Methods/Terminology](https://learnche.org/pid/design-analysis-experiments/index#)
+[DOE R Packages](https://cran.r-project.org/web/views/ExperimentalDesign.html)
+[DOE Full Factorial Design](https://bookdown.org/gerhard_krennrich/doe_and_optimization/doe2.html#full-factorial-2k-designs)
 
 
-```
+### Baysian
+[Bayesian Methods/Terminology]()
+[Bayesian R Packages](https://cran.r-project.org/web/views/Bayesian.html)
+[Bayesian Analysis]()
+
+
 
 
 
