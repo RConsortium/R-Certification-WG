@@ -60,9 +60,43 @@ Look at some example problems and how we might solve them using macros/functions
 
 ### R 
 
-- Base R data manipulation
-- Tidyverse manipulation
-- Other alternatives (data.table)
+#### Base R functionality
+
+- Package management
+    - `install.packages()`
+    - `devtools::install_github()`?
+    - `packageVersion()`
+- Concept of REPL
+    - R console
+    - IDE (RStudio?)
+- Variables
+    - types (numeric, character)
+        - check: `is.numeric()` etc
+        - coercion: `as.numeric()` etc
+    - assignment `<-`, `=`
+- I/O
+    - `read.csv()/read.table()`
+    - `save.csv()/save.table()`
+- Data structures
+    - vectors, lists, matrices, data.frames
+    - subsetting and accessing components of above structures
+        - `[`, , `[[`, `$`
+    - Combining data structures
+        - `c()`, `rbind()`, `cbind()`
+- Control flow
+    - `if/else`
+    - `while`
+    - `break`
+- Functional programming
+    - `*apply()` family of functions
+    - `reduce()`
+
+#### Tidyverse manipulation
+
+
+#### Other alternatives
+
+- `{data.table}`
 
 ### Key tasks
 
