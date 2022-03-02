@@ -47,6 +47,7 @@ Foreign Aid --> education for outreach for spatial statistics. Have an idea for 
 
 
 **Foundational Skills**: 
+
 	--> Less history of SAS and more of the preveleance of SAS in the clinical signifance of R in the SAS world
 	--> Biggest Difference --> point to the Phuse working group in the multilingual world 
 		--> Reconciling the output between the two languages 
