@@ -9,15 +9,16 @@ output:
 ## Library references
 ```{r, results=FALSE, message=FALSE}
 #library references
-library("gtsummary") #tabulation summary
-library("utils") 
-library("dplyr")
-library("car") #levene test
-library("haven") #sas datasets xpt
-library("lme4") #mixed-effect modeling
-library("survival") #survival
-library("FrF2") #DOE
-library("rsm") #DOE
+library(gtsummary) #tabulation summary
+library(utils) 
+library(dplyr)
+library(car) #levene test
+library(haven) #sas datasets xpt
+library(lme4) #mixed-effect modeling
+library(FrF2) #DOE
+library(rsm) #DOE
+library(survival)
+library(survminer) #for nicer plotting for KM curves
 
 #set working directory
 setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
@@ -226,11 +227,39 @@ plot(melm_pred, main = "MELM Predicted")
 
 ## Survival Analysis
 ```{r, results=TRUE}
-## Survival Analysis
 
-## packages for consideration: survival, 
+#lung from survival dataset as tibble
+as_tibble(lung)
+lung <- as_tibble(lung)
+lung
 
-## Weibull survival model
+
+#survival curve
+s <- Surv(lung$time, lung$status)
+head(lung)
+
+#fit survival curve 
+survfit(s~1)
+survfit(Surv(time, status)~1, data=lung)
+sfit <- survfit(Surv(time, status)~sex, data=lung)
+sfit
+
+summary(sfit)
+
+#follow up times for 
+summary(sfit, times=seq(0, 1000, 100))
+
+
+#Kaplan-Meier Plots
+sfit <- survfit(Surv(time, status)~sex, data=lung)
+ggsurvplot(sfit)
+
+
+ggsurvplot(sfit, conf.int=TRUE, pval=TRUE, risk.table=TRUE, 
+           legend.labs=c("Male", "Female"), legend.title="Sex",  
+           palette=c("dodgerblue2", "orchid2"), 
+           title="Kaplan-Meier Curve for Lung Cancer Survival", 
+           risk.table.height=.15)
 
 
 ```
@@ -314,13 +343,18 @@ abline(h=c(-2,0,2),lty=c(2,1,2))
 ### DOE
 [DOE Methods/Terminology](https://learnche.org/pid/design-analysis-experiments/index#)
 [DOE R Packages](https://cran.r-project.org/web/views/ExperimentalDesign.html)
-[DOE Full Factorial Design](https://bookdown.org/gerhard_krennrich/doe_and_optimization/doe2.html#full-factorial-2k-designs)
+[DOE Full Factorial Design Tutorial](https://bookdown.org/gerhard_krennrich/doe_and_optimization/doe2.html#full-factorial-2k-designs)
 
 
 ### Baysian
 [Bayesian Methods/Terminology]()
 [Bayesian R Packages](https://cran.r-project.org/web/views/Bayesian.html)
-[Bayesian Analysis]()
+[Bayesian Analysis Tutorial]()
+
+### Survival
+[Survival Methods/Terminology](https://towardsdatascience.com/survival-analysis-part-a-70213df21c2e)
+[Survival R Package](https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf)
+[Survival Analysis Tutorial](https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/)
 
 
 
