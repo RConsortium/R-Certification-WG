@@ -1,0 +1,64 @@
+qn_1:
+  - question: "What will ?mean do when entered into the R console?"
+  - true: "R will display information about function with name 'mean'"
+  - false: ["R will display information about average usage of functions ", "R will do a global search for the 'mean' keyword", " R will run an example of function 'mean'"]
+qn_2:
+  - question: "What will the following code snippet produce? 'f <- function() x ; x <- 15; f()'"
+  - true: "15"
+  - false: 
+      - "Error in f(): object 'x' not found"
+      - "NULL"
+      - "x"
+qn_3:
+  - question: "What function would I replace f in to get a list of classes of the variables in mtcars f(%1%(mtcars, class))"
+  - true: "lapply"
+  - false: 
+      - "apply"
+      - "summary"
+      - "tapply"
+      
+qn_4:
+  - question: "Which of these is true about lists?"
+  - true: "You can nest lists within lists"
+  - false: 
+      - "All elements of lists must have the same length"
+      - "List elements can only be accessed using the $ notation"
+      - "All elements of lists must have the same class"      
+qn_5:
+  - question: "Which of these is true about matrices?"
+  - true: "All elements must be of the same class"
+  - false: 
+      - "All elements must be named"
+      - "They must have the same number of rows and columns"
+      - "They can only be used for numeric data"   
+qn_6:
+  - question: "How do you make a new line in a string?"
+  - true: "Using \n"
+  - false: ["Using \o", "Using \a", "Using \l"]
+qn_7:
+  - question: "How do you generate an error in R code?"
+  - true: "stop"
+  - false: ["error", "halt", "break"]
+qn_8:
+  - question: "Whats is the difference between require and library?"
+  - true: "require returns a warning if the package does not exist, while library returns an error"
+  - false: 
+    - 'There''s no difference'
+    - 'library can only be called outside of functions'
+    - 'library returns a warning if the package does not exist, while require returns an error'
+
+qn_9:
+  - question: "Which of the following functions can NOT generate a graph with base R graphics?"
+  - true: "histogram()"
+  - false:
+     - 'hist()'
+     - 'boxplot()'
+     - 'barplot()'
+ 
+qn_10:
+  - question: "Which of the following is true about data.frame?"
+  - true: "All columns must have the same length"
+  - false: 
+    - "All columns must have the same class"
+    - "Only numeric data can be used"
+    - "Columns can be lists"
