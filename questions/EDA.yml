@@ -2,7 +2,7 @@
 
 -dplyr
 -ggplot2 (c)
--plotly
+-poly
 -rmd
 -cars
 
@@ -38,7 +38,7 @@ final01 <- by(dataset, dataset$Drug, function(x){
 -assigns a variable summary to dataset for later use
 
 
-5) What function is used to perform logorithmic scaling of data?
+5) What function is used to perform logarithmic scaling of data?
 
 -log() (c)
 -logger()
@@ -60,13 +60,15 @@ ggplot(data = dataset, aes(x = x1, y = y1)) +
 -creates a scatter plot of x1 and y1 and adds best fit line (c)
 -creates a line graph of x1 and y1 and adds confidence interval
 
-7) What does the pipe operator do in R (%>%)?
 
--allows user to pass argument to another in sequence (c)
--creates a new dataframe for analysis purposes 
--creates a subset of a dataset 
--defines a new user defined function for later use
--creates a data stream for real time data analysis
+7) What does the arrange() function perform?
+
+-changes the order of dataframe rows (c)
+-selects desired rows to subset dataframe
+-selects desired columns to subset dataframe
+-creates observation labels for each row 
+
+
 
 8) What is does the str() function perform?
 
@@ -79,7 +81,7 @@ ggplot(data = dataset, aes(x = x1, y = y1)) +
 9) What package can be used for PCA (Principal Component Analysis)?
 
 -cars
--dplyr (c)
+-tidyverse (c)
 -ISLR
 -psych
 -survival
@@ -94,8 +96,15 @@ ggplot(data = dataset, aes(x = x1, y = y1)) +
 
 
 
+General -- 
 
+What does the pipe operator do in R (%>%)?
 
+-allows user to pass argument to another in sequence (c)
+-creates a new dataframe for analysis purposes 
+-creates a subset of a dataset 
+-defines a new user defined function for later use
+-creates a data stream for real time data analysis
 
 
 
