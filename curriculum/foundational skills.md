@@ -76,7 +76,7 @@ Look at some example problems and how we might solve them using macros/functions
     - assignment `<-`, `=`
 - I/O
     - `read.csv()/read.table()`
-    - `save.csv()/save.table()`
+    - `write.csv()/write.table()`
 - Data structures
     - vectors, lists, matrices, data.frames
     - subsetting and accessing components of above structures
@@ -89,7 +89,7 @@ Look at some example problems and how we might solve them using macros/functions
     - `break`
 - Functional programming
     - `*apply()` family of functions
-    - `reduce()`
+    - `Reduce()`
 
 #### Tidyverse manipulation
 
