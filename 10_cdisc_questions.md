@@ -1,11 +1,11 @@
-1. What is the main focus of Good Clinical Practices (GCP)?
+1. What is the main focus of Good Clinical Practices (GCP)? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
     A. harmonized data collection
     B. standard analysis practices
     C. protection of subjects
     D. standard monitoring practices
     *** Answer: C. protection of subjects*** 
 
- 2. Specify the role which focus on the observation (such as the name of a lab test) of a SDTM data set?
+ 2. Specify the variable role which focus on the observation (such as the name of a lab test) of a SDTM data set? 
     A. Identifier
     B. Topic
     C. Timing
@@ -19,7 +19,7 @@
     D. Special Purpose
     Answer: B. Interventions
 
- 4. What is the primary purpose of programming validation?
+ 4. What is the primary purpose of programming validation? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
     A. Ensure that the output from both the original program and the validation program match.
     B. Efficiently ensure any logic errors are discovered early in the programming process.
     C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
@@ -33,7 +33,7 @@
     D. It contains the actual order of elements followed by the subject.
     Answer: B. It is the parent domain for all other observations for human clinical subjects.
 
- 6. Which statement is correct regarding Intention-to-Treat Population?
+ 6. Which statement is correct regarding Intention-to-Treat Population? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
     A. Primary analysis should include all randomised subjects.
     B. Primary analysis should include all randomised subjects and a subject should take a single study drug.
     C. Primary analysis should include enrolled subjects.
