@@ -1,0 +1,37 @@
+---
+title: "Clinical Reporting Guidelines"
+author: "Joseph Korszun"
+output: html_document
+---
+
+```{r}
+
+# Test Upkeep of Common Reporting Packages 
+
+# library to test packages
+library(riskmetric)
+library(dplyr)
+
+# packages for potential questions 
+package.list <- c("gt","huxtable", "pharmaRTF", "rtables", "Tplyr", "officer", "r2rtf", "flextable", "broom", "rtables", "sassy", "fmtr", "logr")
+
+# risk metric report 
+assessment.output <- pkg_ref(package.list) %>%
+  pkg_assess() %>%
+  pkg_score()
+
+
+# check output 
+assessment.output
+
+
+```
+
+
+
+## References 
+[R For Clinical Reporting and Submissions](https://r4csr.org/)
+[PharmaVerse](https://pharmaverse.org/e2eclinical/tlg/)
+[R Tables WG](https://github.com/RConsortium/rtrs-wg)
+[ICH Guidance Documents](https://www.fda.gov/science-research/clinical-trials-and-human-subject-protection/ich-guidance-documents)
+[Quanticate Blog](https://www.quanticate.com/blog/r-programming-in-clinical-trials)
