@@ -1,0 +1,52 @@
+qn_1:
+  - question: "Which of these CRAN packages is used for Clinical Reporting Submissions to FDA?"
+  - True: "r2rtf"
+  - false: ["exporter", "submissions", "reporting", "render"]
+  
+qn_2:
+  - question: "How would you pass an argument for fixing column width for tabular reporting?"
+  - True: "as a vector of argument"
+  - false: ["line by line", "as a single fixed value for all columns", "reporting", "render"]
+  
+qn_3:
+  - question: "How are column headers passed an argument for tabular reporting?"
+  - True: "by a | separator"
+  - false: ["as a vector", "by a *", "by a _", "by the next capital character"]
+  
+qn_4:
+  - question: "From the r2rtf package, what agruments are allowed for the function rtf_encode()?"
+  - True: "all of the above"
+  - false: ["tbl", "doc_type", "page_title", "verbose"]
+  
+qn_5:
+  - question: "From the r2rtf package, what does the function justification() do?"
+  - True: "C and D"
+  - false: ["saves argument for alignment", "creates page breaks in reports", "aligns rows", "aligns texts"]
+  
+qn_6:
+  - question: "What is the benefit of organizing a submission package with folder structures?"
+  - True: "All of the above"
+  - false: ["Consistency", "Reproducibility", "Compliance", "Automation"]
+
+qn_7:
+  - question: "What data format is recommended for regulatory submissions by the FDA?"
+  - True: ".RData"
+  - false: ["All of the above", ".xlm", ".csv", ".R"]
+
+qn_8:
+  - question: "From the fmtr package, what is the purpose of the format catalog?"
+  - True: "save user defined formats for later use"
+  - false: ["auto-generate formats", "create list of formats", "use SAS formats for reporting", "create user defined formats"]
+
+qn_9:
+  - question: "Which of the following are not an output reporting format of reporter package?"
+  - True: "None of the above"
+  - false: [".txt", ".pdf", ".docx", ".rtf"]
+  
+qn_10:
+  - question: "Which logging package is part of the sassy meta-package?"
+  - True: "logr"
+  - false: ["log4j", "logger", "futilelogger", "none of the above"]
+  
+  
+  
