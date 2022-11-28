@@ -1,0 +1,75 @@
+qn_1:
+  - question: "What will ?mean do when entered into the R console?"
+  - true: "R will display information about function with name 'mean'"
+  - false: 
+      - "R will display information about average usage of functions "
+      - "R will do a global search for the 'mean' keyword"
+      - "R will run an example of function 'mean'"
+      - "R will error"
+qn_2:
+  - question: "What will the following code snippet produce? 'f <- function() x ; x <- 15; f()'"
+  - true: "15"
+  - false: 
+      - "Error in f(): object 'x' not found"
+      - "NULL"
+      - "x"
+      - "NA"
+qn_3:
+  - question: "For the dataset mtcars, I would like to obtain a list containing the classes of each column. What function should I replace f with to do this: 'f(mtcars, class)"
+  - true: "lapply"
+  - false: 
+      - "apply"
+      - "summary"
+      - "tapply",
+      - "map_list"
+      
+qn_4:
+  - question: "Which of these is true about lists?"
+  - true: "You can nest lists within lists"
+  - false: 
+      - "All elements of lists must have the same length"
+      - "List elements can only be accessed using the $ notation"
+      - "All elements of lists must have the same class"
+      - "Lists can only store numeric data"
+qn_5:
+  - question: "Which of these is true about matrices?"
+  - true: "All elements must be of the same class"
+  - false: 
+      - "All elements must be named"
+      - "They must have the same number of rows and columns"
+      - "They can only be used for numeric data"
+      - "They can only be used for character data"
+qn_6:
+  - question: "How do you make a new line in a string?"
+  - true: "Using \n"
+  - false: ["Using \o", "Using \a", "Using \l", "using <br>"]
+qn_7:
+  - question: "How do you generate an error in R code?"
+  - true: "stop"
+  - false: ["error", "halt", "break", "end"]
+qn_8:
+  - question: "Whats is the difference between require and library?"
+  - true: "require returns a warning if the package does not exist, while library returns an error"
+  - false: 
+    - "There's no difference"
+    - 'library can only be called outside of functions'
+    - 'library returns a warning if the package does not exist, while require returns an error'
+    - "require also installs the package if it is not present"
+
+qn_9:
+  - question: "Which of the following functions can NOT generate a graph with base R graphics?"
+  - true: "histogram()"
+  - false:
+     - 'plot()'
+     - 'boxplot()'
+     - 'barplot()'
+     - 'mosaicplot()'
+ 
+qn_10:
+  - question: "Which of the following is true about data.frame?"
+  - true: "All columns must have the same length"
+  - false: 
+    - "All columns must have the same class"
+    - "Only numeric data can be used"
+    - "Columns can be lists"
+    - "Only character data can be used"

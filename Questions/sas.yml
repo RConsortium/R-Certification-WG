@@ -1,0 +1,52 @@
+qn_1:
+  - question: "Which of these CRAN packages can be used to import sas data files into R?"
+  - true: "haven"
+  - false: ["sassy", "SAScii", "sass", "reader"]
+qn_2:
+  - question: "What is the extension of the standard sas data file?"
+  - true: "sas7bdat"
+  - false: ["sas", "sasdat", "ss", "sdat"]
+qn_3:
+  - question: "What does length denote for a character column in a SAS dataset"
+  - true: "The maximum length any entry can be"
+  - false: 
+    - "The length of that column"
+    - "The number of characters each entry is"
+    - "The number of bytes stored in each entry"
+    - "Time for the column to be read by SAS"
+qn_4:
+  - question: "What is the extension of the open source SAS transport file"
+  - true: "xpt"
+  - false: ["sasxpf", "sas7xpt", "xpf", "xt"]
+qn_5:
+  - question: "What formats exist in SAS by category"
+  - true: "Character, and Numeric"
+  - false: 
+    - "String, Double"
+    - "Character, Double"
+    - "String, Numeric"
+    - "String, Character"
+qn_6:
+  - question: "What is the purpose of the label attribute?"
+  - true: "A long form description of a column"
+  - false: 
+    -"Notes on an output"
+    - "A long form description of a dataset"
+    - "Describing the format of a column"
+    - "Gives the length of the column"
+qn_7:
+  - question: "How does SAS indicate missing data in character vectors?"
+  - true: "An empty string(" ")"
+  - false: ["NA", "NAC", "MISSING", "NULL"]
+qn_8:
+  - question: "How does SAS indicate missing data in numeric vectors"
+  - true: "."
+  - false: ["NA", ";", ",", "NULL"]
+qn_9:
+  - question: "What is the maximum length of SAS variable names?"
+  - true: "32"
+  - false: ["16", "8", "64", "128"]    
+qn_10:
+  - question: "What must the first letter of a SAS variable name be?"
+  - true: "A letter or an underscore"
+  - false: ["A letter only", "A letter or a full stop", "A letter or a number", "There is no restriction"]      
