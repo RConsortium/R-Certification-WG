@@ -14,8 +14,8 @@
 
 ## Certification and Products: 
 
---> Founding member of the training and certification team 
-	--> Has a good understanding of the exam and processes in the group 
+- Founding member of the training and certification team 
+	- Has a good understanding of the exam and processes in the group 
 
 
 
@@ -76,22 +76,22 @@
 
 Exam Cost: 
 
---> We are trying to estimate a small fee (300 dollars for the exam)
---> The multiple choice by Linux foundation are 250 already
---> Rough rule of thumb is for certiverse 
-	--> 20% to them
-	--> support fee for 30 bucks in hard cost for platform 
-		--> Remainder is the training team and project 
-		--> proctoring is $18/session
+- We are trying to estimate a small fee (300 dollars for the exam)
+- The multiple choice by Linux foundation are 250 already
+- Rough rule of thumb is for certiverse 
+	- 20% to them
+	- support fee for 30 bucks in hard cost for platform 
+		- Remainder is the training team and project 
+		- proctoring is $18/session
 
 
 Next Steps: 
 
---> Set up a meeting for the next steps 
---> Check out certiverse for platform
---> Would be a certification exam and candidate experience 
-	--> Would like to each get the code
-		--> Send up a 10 code for assessing the platform
+- Set up a meeting for the next steps 
+- Check out certiverse for platform
+- Would be a certification exam and candidate experience 
+	- Would like to each get the code
+		- Send up a 10 code for assessing the platform
 
 
 
