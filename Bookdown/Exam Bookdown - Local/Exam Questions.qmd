@@ -1,0 +1,723 @@
+# Exam Questions
+
+## SAS Questions
+
+1.  Which of these CRAN packages can be used to import sas data files into R?
+
+    A. haven
+
+    B. sassy
+
+    C. SAScii
+
+    D. sass
+
+    E. None of the above
+
+    **Answer**: A. haven
+
+2.  What is the extension of the standard sas data file?
+
+    A. sas7bdat
+
+    B. sas
+
+    C. sasdat
+
+    D. ss
+
+    E. None of the above
+
+    **Answer**: A. sas7bdat
+
+3.  What does length denote for a character column in a SAS dataset?
+
+    A. The maximum length any entry can be
+
+    B. The length of that column
+
+    C. The number of characters each entry is
+
+    D. The number of bytes stored in each entry
+
+    E. None of the above
+
+    **Answer**: A. The maximum length any entry can be
+
+4.  What is the extension of the open source SAS transport file?
+
+    A. xpt
+
+    B. sasxpf
+
+    C. sas7xpt
+
+    D. xpf
+
+    E. All of the above
+
+    **Answer**: A. xpt
+
+5.  What formats exist in SAS by category?
+
+    A. Character, DCBS, Numeric and 'Date and Time'
+
+    B. String, DCBS, Double and 'Date and Time'
+
+    C. Character, DCBS, Double and 'Date and Time'
+
+    D. String, DCBS, Numeric and 'Date and Time'
+
+    E. None of the above
+
+    **Answer**: A. Character, DCBS, Numeric and 'Date and Time
+
+6.  What is the purpose of the label attribute?
+
+    A. A long form description of a column
+
+    B. Notes on an output
+
+    C. A long form description of a dataset
+
+    D. A short form description of a dataset
+
+    E. A short form description of a column
+
+    **Answer**: A. A long form description of a column
+
+7.  How does SAS indicate missing data in character vectors?
+
+    A. An empty string
+
+    B. NA
+
+    C. NAC
+
+    D. MISSING
+
+    E. All of the above
+
+    **Answer**: A. An empty string
+
+8.  How does SAS indicate missing data in numeric vectors?
+
+    A. .
+
+    B. NA
+
+    C. ;
+
+    D. ,
+
+    E. None of the above
+
+    **Answer**: A. .
+
+9.  What is the maximum length of SAS variable names?
+
+    A. 32
+
+    B. 16
+
+    C. 8
+
+    D. 64
+
+    E. None of the above
+
+    **Answer**: A. 32
+
+10. What must the first letter of a SAS variable name be?
+
+    A. A letter or an underscore
+
+    B. A letter only
+
+    C. A letter or a full stop
+
+    D. A letter or a number
+
+    E. None of the above
+
+    **Answer**: A. A letter or an underscore
+
+## CDISC/GCP Questions
+
+1.  What is the main focus of Good Clinical Practices (GCP)?
+
+    A. harmonized data collection
+
+    B. standard analysis practices
+
+    C. protection of subjects
+
+    D. standard monitoring practices
+
+    **Answer**: C. protection of subjects
+
+2.  Specify the variable role which focus on the observation (such as the name of a lab test) of a SDTM data set?
+
+    A. Identifier
+
+    B. Topic
+
+    C. Timing
+
+    D. Qualifier
+
+    **Answer**: B. Topic
+
+3.  Concomitant/Prior Medications (CM) is a component of which SDTM class?
+
+    A. Findings
+
+    B. Interventions
+
+    C. Events
+
+    D. Special Purpose
+
+    **Answer**: B. Interventions
+
+4.  What is the primary purpose of programming validation?
+
+    A. Ensure that the output from both the original program and the validation program match.
+
+    B. Efficiently ensure any logic errors are discovered early in the programming process.
+
+    C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
+
+    D. Document all specifications pertaining to programmed output and ensure all were reviewed during the programming process.
+
+    **Answer**: C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
+
+5.  Why is the Demographics (DM) domain required for all human clinical trials regulatory submissions?
+
+    A. It is a Findings domain that contains subject-related data not collected in other domains
+
+    B. It is the parent domain for all other observations for human clinical subjects.
+
+    C. It is a Findings domain that contains general subject characteristics about demography.
+
+    D. It contains the actual order of elements followed by the subject.
+
+    **Answer**: B. It is the parent domain for all other observations for human clinical subjects.
+
+6.  Which statement is correct regarding Intention-to-Treat Population?
+
+    A. Primary analysis should include all randomized subjects.
+
+    B. Primary analysis should include all randomized subjects and a subject should take a single study drug.
+
+    C. Primary analysis should include enrolled subjects.
+
+    D. Primary analysis should include subjects who have taken at least a single study drug.
+
+    **Answer**: A. Primary analysis should include all randomized subjects.
+
+7.  Exposure data pertaining to body temperature associated with a fever should reside in which SDTMIG domain?
+
+    A. Exposure (EX)
+
+    B. Clinical Events (CE)
+
+    C. Adverse Events (AE)
+
+    D. Vital Signs (VS)
+
+    **Answer**: D. Vital Signs (VS)
+
+8.  Topic variable for the Interventions and Events General Observation Class model is often stored as \_\_\_\_\_\_\_.
+
+    A. Standardized Value (AEDECOD, MHDECOD)
+
+    B. Modified Value (CMMODIFY, PEMODIFY)
+
+    C. Verbatim Value (AETERM, CMTRT)
+
+    D. Original Value (AEORRES, MHORRES)
+
+    **Answer**: C. Verbatim Value (AETERM, CMTRT)
+
+9.  What is the maximum character limited allowed for ARMCD variable?
+
+    A. 8 characters
+
+    B. 20 characters
+
+    C. 40 characters
+
+    D. 200 characters
+
+    **Answer**: B. 20 characters
+
+10. Which date/time determines the population of the EPOCH variable if included in a general observation class domain?
+
+    A. Start date/time of an observation or collection date/time
+
+    B. Reference time point date/time
+
+    C. Disease milestone instance date/time
+
+    D. Planned start or end of assessment interval, as appropriate
+
+    **Answer**: A. Start date/time of an observation or collection date/time.
+
+## EDA Questions
+
+1.  What package is used for creating data visualizations in R?
+
+    A. dplyr
+
+    B. ggplot2
+
+    C. plotly
+
+    D. cars
+
+    E. B and C
+
+    **Answer**: E. B and C
+
+2.  Given the function below, what is the expected output of "final01"?
+
+```{r, eval=FALSE}
+final01 <- by(dataset, dataset$Drug, function(x){ calculation <- colMeans(x[,2:3])})
+```
+
+A. performs calculations of columns 2 and 3 and returns mean values(c)
+
+B. provides the intercept of model -creates a separate dataset for EDA
+
+C. takes the input of dataset and formats for reporting
+
+D. performs a calculation on Drug column and stores in memory for later use
+
+E. None of the above
+
+**Answer**: A. performs calculations of columns 2 and 3 and returns mean values
+
+3.  What function would be used in R to perform a t-test?
+
+    A. t.test()
+
+    B. t()
+
+    C. T()
+
+    D. T.Test()
+
+    E. summarise()
+
+    **Answer**: A. t.test()
+
+4.  What does the summary() function perform in R?
+
+    A. provides statistical summary of dataset
+
+    B. generates a linear model
+
+    C. assesses fit of linear model for all independent variables
+
+    D. creates a summary plot of dependent variable
+
+    E. assigns a variable summary to dataset for later use
+
+    **Answer**: A. provides statistical summary of dataset
+
+5.  What function is used to perform logorithmic scaling of data?
+
+    A. log()
+
+    B. logger()
+
+    C. futilelog()
+
+    D. caret()
+
+    E. dplyr()
+
+    **Answer**: A. log()
+
+6.  What is the expected output of the code snippet below?
+
+```{r, eval=FALSE}
+ggplot(data = dataset, aes(x = x1, y = y1)) + geom_point() + stat_smooth(method = lm, col = "red")
+```
+
+A. linear model using x1 as independent variable and y1 as dependent variable
+
+B. creates a scatter plot of x1 and y1
+
+C. creates a line graph of x1 and y1
+
+D. creates a line graph of x1 and y1 and adds confidence interval
+
+E. creates a scatter plot of x1 and y1 and adds best fit line
+
+**Answer**: E. creates a scatter plot of x1 and y1 and adds best fit line
+
+7.  What does the pipe operator do in R (%\>%)?
+
+    A. allows user to pass argument to another in sequence
+
+    B. creates a new dataframe for analysis purposes
+
+    C. creates a subset of a dataset
+
+    D. defines a new user defined function for later use
+
+    E. creates a data stream for real time data analysis
+
+    **Answer**: A. allows user to pass argument to another in sequence
+
+8.  What is does the str() function perform?
+
+    A. shows internal structure of R objects
+
+    B. shows all classes for individual dataset
+
+    C. defines the type of input for all columns
+
+    D. shows missing values of a dataframe
+
+    E. type casts to a string object
+
+    **Answer**: A. shows internal structure of R objects
+
+9.  What package can be used for PCA (Principal Component Analysis)?
+
+    A. cars
+
+    B. tidyve
+
+    C. ISLR
+
+    D. psyh
+
+    E. survival
+
+    **Answer**: B. tidyverse
+
+10. What function(s) can be used to identify the range of a numeric column in R?
+
+    A. range()
+
+    B. IQR()
+
+    C. summary()
+
+    D. all of the above
+
+    E. both A and C
+
+    **Answer**: E. both A and C
+
+## Modeling Questions
+
+1.  What package is used to reproduce SAS's predictions for linear modeling at combinations of specified factors?
+
+    A. ANOVA
+
+    B. lsmeans
+
+    C. ISLR
+
+    D. psych
+
+    E. dplyr
+
+    **Answer**: B. lsmeans
+
+2.  Given the code snippet below, what is the expected value of "output"?
+
+```{r, eval=FALSE}
+output <- lm(PostTreatment ~ Drug + PreTreatment, data = anova)
+```
+
+A. ANOVA table of PostTreatment
+
+B. Variance/Covariance Matrix of Drug and PreTreatment
+
+C. Linear Model of PostTreatment as depdendent variable
+
+D. Mixed-Effect model of PostTreatment as dependent variable
+
+E. Residual analysis of anova dataset
+
+**Answer**: C. Linear Model of PostTreatment as depdendent variable
+
+3.  What package is used to perform survival analysis in R?
+
+    A. psych
+
+    B. dplyr
+
+    C. sminer
+
+    D. surry
+
+    E. survival
+
+    **Answer**: E. survival
+
+4.  Given the linear mixed effect modeling function below, what is the fixed variable?
+
+```{r, eval=FALSE}
+melm <- lmer(AVAL ~ (1\|SITEGR1)+BASE+TRTPN,data=mlm_sub, REML = FALSE)
+```
+
+A. BASE
+
+B. TRTPN
+
+C. SITEGR1
+
+D. AVAL
+
+E. All variables not fixed
+
+**Answer**: C. SITEGR1
+
+5.  What is the expected output of the code snippet below?
+
+```{r, eval=FALSE}
+lung %>% filter(status == 2) %>% summarize(median_survival = median(time))
+```
+
+A. finds the median survial time for status == 2
+
+B. group lung dataframe for status == 2
+
+C. remove status == 2 from lung dataframe
+
+D. provide summary statistics for lung dataframe where status==2
+
+E. filter lung dataset to status==2 and determine median status for survival
+
+**Answer**: A. finds the median survial time for status == 2
+
+6.  What function would be used to pass a dataframe object (x) and output a covariance matrix?
+
+    A. covariance(x)
+
+    B. c.variance(x)
+
+    C. covar(x)
+
+    D. variance(x, type=covariance)
+
+    E. cov(x)
+
+    **Answer**: E. cov(x)
+
+7.  Given the command below, what does the output produce?
+
+```{r, eval=FALSE}
+cor(df[,-1])
+```
+
+A. a correlation matrix excluding the first column
+
+B. a correlation matrix excluding the last column
+
+C. pearson's correlation of the last column
+
+D. pearson's correlation of the first column
+
+E. none of the above
+
+**Answer**: A. a correlation matrix excluding the first column
+
+8.  Given the code snippet below, what is the expected output?
+
+```{r, eval=FALSE}
+sapply(data,function(x)sum(is.na(x)))
+```
+
+A. sum the number of NAs in dataframe and output vector
+
+B. replace all missing values with NA in data -impute missing values with 0 in dataframe
+
+C. none of the above
+
+D. sum the number of NAs in colun and output vector
+
+E. none of the above
+
+**Answer**: A. sum the number of NAs in dataframe and output vector
+
+9.  What does the code snippet below perform?
+
+```{r, eval=FALSE}
+pnorm(q=-0.77, lower.tail=TRUE)
+```
+
+A. finds p-value with a z-score of -0.77 of left-tail test
+
+B. finds p-value with a z-score of -0.77 of right-tail test
+
+C. take the interquartile range of dataframe
+
+D. creates normality test of a numeric vector
+
+E. A or B
+
+**Answer**: A. finds p-value with a z-score of -0.77 of left-tail test
+
+10. To utilize survival package's modeling capabilities how must your dataset be passed as argument?
+
+    A. as a tibble
+
+    B. as a dataframe
+
+    C. as either tibble or dataframe
+
+    D. without missing data in any row
+
+    E. none of the above
+
+    **Answer**: C. as either tibble or dataframe
+
+## Reporting Questions
+
+1.  Which of these CRAN packages is used for Clinical Reporting Submissions to FDA?
+
+    A. r2rtf
+
+    B. exporter
+
+    C. submissions
+
+    D. reporting
+
+    E. render
+
+    **Answer**: A. r2rtf
+
+2.  How would you pass an argument for fixing column width for tabular reporting?
+
+    A. as a vector of argument
+
+    B. line by line
+
+    C. as a single fixed value for all columns
+
+    D. reporting
+
+    E. render
+
+    **Answer**: A. as a vector of argument
+
+3.  How are column headers passed an argument for tabular reporting?
+
+    A. by a \| separator
+
+    B. by a \*
+
+    C. by a \_
+
+    D. as a vector
+
+    E. by the next capital character
+
+    **Answer**: A. by a \| separator
+
+4.  From the r2rtf package, what arguments are allowed for the function rtf_encode()
+
+    A. tbl
+
+    B. doc_type
+
+    C. page_title
+
+    D. verbose
+
+    E. all of the above
+
+    **Answer**: E. all of the above
+
+5.  From the r2rtf package, what does the function justification() do?
+
+    A. saves argument for alignment
+
+    B. creates page breaks in reports
+
+    C. aligns rows
+
+    D. aligns texts
+
+    E. C and D
+
+    **Answer**: E. C and D
+
+6.  What is the benefit of organizing a submission package with folder structures?
+
+    A. Consistency
+
+    B. Reproducibility
+
+    C. Compliance
+
+    D. Automation
+
+    E. All of the above
+
+    **Answer**: E. All of the above
+
+7.  What data format is recommended for regulatory submissions by the FDA?
+
+    A. .RData
+
+    B. .xlm
+
+    C. .csv
+
+    D. .R
+
+    E. All of the above
+
+    **Answer**: A. .RData
+
+8.  From the fmtr package, what is the purpose of the format catalog?
+
+    A. save user defined formats for later use
+
+    B. auto-generate formats
+
+    C. create list of formats
+
+    D. use SAS formats for reporting
+
+    E. create user defined formats
+
+    **Answer**: A. save user defined formats for later use
+
+9.  Which of the following are not an output reporting format of reporter package?
+
+    A. .txt
+
+    B. .pdf
+
+    C. .docx
+
+    D. .rtf
+
+    E. None of the above
+
+    **Answer**: E. None of the above
+
+10. Which logging package is part of the sassy meta-package?
+
+    A. logr
+
+    B. log4j
+
+    C. logger
+
+    D. futilelogger
+
+    E. None of the above
+
+    **Answer**: A. logr
