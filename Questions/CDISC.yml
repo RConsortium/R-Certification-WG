@@ -1,63 +1,119 @@
-1. What is the main focus of Good Clinical Practices (GCP)? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
-    A. harmonized data collection
-    B. standard analysis practices
-    C. protection of subjects
-    D. standard monitoring practices
-    *** Answer: C. protection of subjects*** 
+1. What does CDISC acronym stand for?
+    A. Clinical Data Interchange Standards Consortium
+    B. Clinical Data Interchange Standards Committee
+    C. Clinical Data Interchange Standard Code
+    D. Clinical Data Interchange Standard Comments
+    E. Clinical Data Interchange Standard Corporation
+    Answer:  A
 
- 2. Specify the variable role which focus on the observation (such as the name of a lab test) of a SDTM data set? 
-    A. Identifier
-    B. Topic
-    C. Timing
-    D. Qualifier
-    Answer: B. Topic
-
- 3. Concomitant/Prior Medications (CM) is a component of which SDTM class?
-    A. Findings
-    B. Interventions
-    C. Events
-    D. Special Purpose
-    Answer: B. Interventions
-
- 4. What is the primary purpose of programming validation? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
-    A. Ensure that the output from both the original program and the validation program match.
-    B. Efficiently ensure any logic errors are discovered early in the programming process.
-    C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
-    D. Document all specifications pertaining to programmed output and ensure all were reviewed during the programming process.
-    Answer: C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
-
- 5. Why is the Demographics (DM) domain required for all human clinical trials regulatory submissions?
+2. Which CDISC standard is Data Collection standard?
+    A. SDTM
+    B. GCP
+    C. CDASH
+    D. ICH
+    E. ADaM 
+        
+3. Which CDISC standard is a standard structure for human clinical trial (study) data tabulations and for non-clinical study data tabulations 
+    A. CDASH
+    B. SDTM
+    C. ADaM
+    D. ICH
+    E. SEND
+    
+4. Which CDISC standard is a structure that is all about creating data that's ready for analysis?
+    A. CDASH
+    B. ANAL
+    C. ADaM
+    D. SDTM
+    E. DEFINE-XML
+    
+5. What is Controlled terminology
+    A. Fully Controlled list of values to be used with data items within CDISC-defined datasets
+    B. Contolled list of variables for data items within CDISC-defined datasets
+    C. The set of codelists and valid values used with data items within CDISC-defined datasets
+    D. Controlled list of standards to be used within CDISC standards
+    E. Contolled list of terms that can be used with data items within CDISC-define datasets
+    
+6. How many classes are in Standard Data Tabulation Model (SDTM) standards? 
+    A.  Interventions, Events, and Findings
+    B.  Demographics, Exposure, and Events
+    C.  Demographics, Safety, and Efficacy
+    D.  Interventions, Exposure, and Vitals
+    E.  Data Collection, Standards, and Analysis
+    
+7.  Why is the Demographics (DM) domain required for all human clinical trials regulatory submissions?
     A. It is a Findings domain that contains subject-related data not collected in other domains
     B. It is the parent domain for all other observations for human clinical subjects.
     C. It is a Findings domain that contains general subject characteristics about demography.
     D. It contains the actual order of elements followed by the subject.
     Answer: B. It is the parent domain for all other observations for human clinical subjects.
 
- 6. Which statement is correct regarding Intention-to-Treat Population? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
+8. Concomitant/Prior Medications (CM) is a component of which SDTM class?
+    A. Findings
+    B. Interventions
+    C. Events
+    D. Special Purpose
+    Answer: B. Interventions
+
+    
+ 9. How many characters are there in a DOMAIN code which is used to distinguish each dataset?  
+    A.  A unique, one-character DOMAIN code that should be used consistently throughout the submission
+    B.  A unique, two-character DOMAIN code that should be used consistently throughout the submission
+    C.  A unique, three-character DOMAIN code that should be used consistently throughout the submission
+    D.  A unique, four-character DOMAIN code that should be used consistently throughout the submission
+    E.  A unique, five-character DOMAIN code that should be used consistently throughout the submission
+    Correct Answer:  B
+ 
+ 10. Select all correct reponses for ADaMIG
+    A.  ADaMIG if prescriptve guideline for Implementation
+    B. specifies  standard dataset structures and variables, including naming. conventions. It also specifies standard solutions to implementation issues
+    C. It is intended to guide the organization, structure, and format of standard clinical trial tabulation datasets 
+    D. There is only one version of ADaMIG for every ADaM version
+    E. All of the Above
+    Correct Answer: B
+
+
+
+*** CDISC- Level 2 questions
+
+x. Specify the variable role which focus on the observation (such as the name of a lab test) of a SDTM data set? 
+    A. Identifier
+    B. Topic
+    C. Timing
+    D. Qualifier
+    E. 
+    Answer: B. Topic
+
+
+ x. Which statement is correct regarding Intention-to-Treat Population? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
     A. Primary analysis should include all randomised subjects.
     B. Primary analysis should include all randomised subjects and a subject should take a single study drug.
     C. Primary analysis should include enrolled subjects.
     D. Primary analysis should include subjects who have taken at least a single study drug.
     Answer: A. Primary analysis should include all randomised subjects.
- 7. Exposure data pertaining to body temperature associated with a fever should reside in which SDTMIG domain?
+    
+ x. Exposure data pertaining to body temperature associated with a fever should reside in which SDTMIG domain?
     A. Exposure (EX)
     B. Clinical Events (CE)
     C. Adverse Events (AE)
     D. Vital Signs (VS)
     Answer: D. Vital Signs (VS)
- 8. Topic variable for the Interventions and Events General Observation Class model is often stored as _______
+    
+ x. Topic variable for the Interventions and Events General Observation Class model is often stored as _______
     A. Standardized Value (AEDECOD, MHDECOD)
     B. Modified Value (CMMODIFY, PEMODIFY)
     C. Verbatim Value (AETERM, CMTRT)
     D. Original Value (AEORRES, MHORRES)
  Answer: C. Verbatim Value (AETERM, CMTRT)
- 9. What is the maximum character limited allowed for ARMCD variable?
+ 
+ x.What is the maximum character limited allowed for ARMCD variable?
     A. 8 characters
     B. 20 characters
     C. 40 characters
     D. 200 characters
     Answer: B. 20 characters
- 10. Which date/time determines the population of the EPOCH variable if included in a general observation class domain?
+    
+ x. Which date/time determines the population of the EPOCH variable if included in a general observation class domain?
     A. Start date/time of an observation or collection date/time
     B. Reference time point date/time
     C. Disease milestone instance date/time
@@ -66,16 +122,28 @@
 
 
 
+** Following questions don't fit with CDISC Knowledge-check.  Suggestion:  GCP/Clinical Trials
+  
 
-Feedback: 
+ x. What is the main focus of Good Clinical Practices (GCP)? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
+    A. harmonized data collection
+    B. standard analysis practices
+    C. protection of subjects
+    D. standard monitoring practices
+    *** Answer: C. protection of subjects*** 
+    
+     
+   x. What is the primary purpose of programming validation?
+    A. Ensure that the output from both the original program and the validation program match.
+    B. Efficiently ensure any logic errors are discovered early in the programming process.
+    C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
+    D. Document all specifications pertaining to programmed output and ensure all were reviewed during the programming process.
+    Answer: C. Justify the means used to accomplish the outcome of a program and ensure its accurate representation of the original data.
 
-We agreed to move this question out of CDISC section. More appropriate questions perhaps should be:
 
-What are CDISC standards?
-What is CDASH standard
-What is SDTM standard
-What is ADam Standard
-What is Controlled terminology
-SDTM Model and IG
-ADaM Model & IG
+ x. What purpose is Safety population used for in clinical trials?   
+    A. The Safety Population is used for the analysis of safety, including adverse events, toxicity and laboratory evaluations.
+    
+ x. How is Efficacy population usually defined? 
+   A. Efficacy  Population usually includes subjects who have taken at least 1 dose of the study medication (has been exposed to the drug)
 
