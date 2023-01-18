@@ -1,0 +1,17 @@
+# Preface {.unnumbered}
+
+This is the introduction to the [R Cert WG](https://github.com/RConsortium/R-Certification-WG)
+
+## Background
+
+Statistical programming for clinical trials is moving towards a multi-language environment where submissions to regulatory agencies may include code written in SAS, R and other languages (e.g. python, STATA, etc). The mission of this working group is to develop the content for a process to certify that statistical programmers have the basic skills to function effectively in a mixed SAS and R clinical trial programming environment.The R Certification Working Group (R Cert WG) was established to bring about programmatic assessment and confidence to those seeking to advance their career in R within a clinical environment.
+
+## Exam Structure
+
+The R Cert WG developed a mock exam for those seeking accreditation in R for a clinical analyst. The following areas were assess:
+
+-   CDISC Standards and GCP Knowledge
+-   Relevant SAS and R data structures
+-   The basics of managing SAS and R datasets
+-   The basics of performing EDA and modeling in R
+-   Reporting methods in SAS and R

@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "R Certification - Clinical Analyst"
+  author: "Joseph Korszun"
+  date: "11/28/2022"
+  chapters:
+    - index.qmd
+    - Exam Levels.qmd
+    - Exam Questions.qmd
+    - Contact Info.qmd
+
+params:
+  github: joseph-ProCogia
+  author: Joseph Korszun
+  email: joseph@procogia.com
+  
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
