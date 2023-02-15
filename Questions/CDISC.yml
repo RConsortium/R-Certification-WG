@@ -6,12 +6,13 @@
     E. Clinical Data Interchange Standard Corporation
     Answer:  A
 
-2. Which CDISC standard is Data Collection standard?
+2. Which CDISC standard gives standard ways for collecting data?
     A. SDTM
     B. GCP
     C. CDASH
     D. ICH
     E. ADaM 
+    Answer: C 
         
 3. Which CDISC standard is a standard structure for human clinical trial (study) data tabulations and for non-clinical study data tabulations 
     A. CDASH
@@ -19,20 +20,23 @@
     C. ADaM
     D. ICH
     E. SEND
+    Answer: B
     
-4. Which CDISC standard is a structure that is all about creating data that's ready for analysis?
+4. Which CDISC standard is a structure for creating data that is ready for analysis?
     A. CDASH
-    B. ANAL
+    B. ICH
     C. ADaM
     D. SDTM
     E. DEFINE-XML
+    Answer: C
     
-5. What is Controlled terminology
+5. What is Controlled terminology?
     A. Fully Controlled list of values to be used with data items within CDISC-defined datasets
     B. Contolled list of variables for data items within CDISC-defined datasets
     C. The set of codelists and valid values used with data items within CDISC-defined datasets
     D. Controlled list of standards to be used within CDISC standards
     E. Contolled list of terms that can be used with data items within CDISC-define datasets
+    Answer: C
     
 6. How many classes are in Standard Data Tabulation Model (SDTM) standards? 
     A.  Interventions, Events, and Findings
@@ -40,13 +44,15 @@
     C.  Demographics, Safety, and Efficacy
     D.  Interventions, Exposure, and Vitals
     E.  Data Collection, Standards, and Analysis
+    Answer: A 
     
 7.  Why is the Demographics (DM) domain required for all human clinical trials regulatory submissions?
     A. It is a Findings domain that contains subject-related data not collected in other domains
     B. It is the parent domain for all other observations for human clinical subjects.
     C. It is a Findings domain that contains general subject characteristics about demography.
     D. It contains the actual order of elements followed by the subject.
-    Answer: B. It is the parent domain for all other observations for human clinical subjects.
+    E. It is the trial summary domain
+    Answer: B
 
 8. Concomitant/Prior Medications (CM) is a component of which SDTM class?
     A. Findings
@@ -81,22 +87,16 @@ x. Specify the variable role which focus on the observation (such as the name of
     B. Topic
     C. Timing
     D. Qualifier
-    E. 
+    E. Event
     Answer: B. Topic
 
 
- x. Which statement is correct regarding Intention-to-Treat Population? [comment]: <> (This is not appropriate for CDISC section, perhaps could be moved general programming section)
-    A. Primary analysis should include all randomised subjects.
-    B. Primary analysis should include all randomised subjects and a subject should take a single study drug.
-    C. Primary analysis should include enrolled subjects.
-    D. Primary analysis should include subjects who have taken at least a single study drug.
-    Answer: A. Primary analysis should include all randomised subjects.
-    
  x. Exposure data pertaining to body temperature associated with a fever should reside in which SDTMIG domain?
     A. Exposure (EX)
     B. Clinical Events (CE)
     C. Adverse Events (AE)
     D. Vital Signs (VS)
+    E. Demography (DM)
     Answer: D. Vital Signs (VS)
     
  x. Topic variable for the Interventions and Events General Observation Class model is often stored as _______
@@ -104,6 +104,7 @@ x. Specify the variable role which focus on the observation (such as the name of
     B. Modified Value (CMMODIFY, PEMODIFY)
     C. Verbatim Value (AETERM, CMTRT)
     D. Original Value (AEORRES, MHORRES)
+    E. 
  Answer: C. Verbatim Value (AETERM, CMTRT)
  
  x.What is the maximum character limited allowed for ARMCD variable?
@@ -111,6 +112,7 @@ x. Specify the variable role which focus on the observation (such as the name of
     B. 20 characters
     C. 40 characters
     D. 200 characters
+    E. 80 characters
     Answer: B. 20 characters
     
  x. Which date/time determines the population of the EPOCH variable if included in a general observation class domain?
