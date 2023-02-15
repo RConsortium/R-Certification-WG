@@ -86,9 +86,9 @@ pnorm(q=-0.77, lower.tail=TRUE)
 
 10) To utilize survival package's modeling capabilites how must your dataset be passed as arguement?
 
--as a tibble (c)
+-as a tibble 
 -as a dataframe
--as either tibble or dataframe
+-as either tibble or dataframe (c)
 -without missing data in any row
 -none of the above
 
