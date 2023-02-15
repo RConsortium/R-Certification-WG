@@ -16,7 +16,7 @@ output <- lm(PostTreatment ~ Drug + PreTreatment, data = anova)
 -Mixed-Effect model of PostTreatment as dependent variable
 -Residual analysis of anova dataset
 
-3) What package is used to perform survival analysis in R?
+3) Which package is used to perform survival analysis in R?
 
 -psych
 -dplyr
