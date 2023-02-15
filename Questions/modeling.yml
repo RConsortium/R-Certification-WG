@@ -16,7 +16,7 @@ output <- lm(PostTreatment ~ Drug + PreTreatment, data = anova)
 -Mixed-Effect model of PostTreatment as dependent variable
 -Residual analysis of anova dataset
 
-3) What package is used to perform survival analysis in R?
+3) Which package is used to perform survival analysis in R?
 
 -psych
 -dplyr
@@ -34,17 +34,16 @@ melm <- lmer(AVAL~ (1|SITEGR1)+BASE+TRTPN,data=mlm_sub, REML = FALSE)
 -AVAL
 -All variables not fixed
 
-5) What is the expected output of the code snippet below?
+5) What will the following code produce
 
-  lung %>% 
-  filter(status == 2) %>% 
-  summarize(median_survival = median(time))
+  out <- lm(Sepal.Length ~ Sepal.Width, iris)
+  plot(out)
 
--finds the median survial time for status == 2 (c)
--group lung dataframe for status == 2
--remove status == 2 from lung dataframe
--provide summary statistics for lung dataframe where status==2
--filter lung dataset to status==2 and determine median status for survival 
+-A plot of the modelled line versus the observed values
+-Several plots giving information on the residuals (leverage, normal qqplot, etc) (c)
+-A normal qqplot
+-The code will error as you need to provide an argument, type determining what you want to see
+-The code will error; you should use lmplot to plot the results of an lm
 
 6) What function would be used to pass a dataframe object (x) and output a covariance matrix?
 
@@ -64,15 +63,14 @@ cor(df[,-1])
 -pearson's correlation of the first column
 -none of the above 
 
-8) Given the code snippet below, what is the expected output?
+8) How can you change the reference value of a categorical variable in lm?
 
-sapply(data,function(x)sum(is.na(x)))
+- Use revel(<variable>, ref = <new ref>) on the categorical variable before passing to lm (c)
+- Use lm(..., ref = c(<variable> = <new ref>)) to change the value 
+- Use reref(<variable>, ref = <new ref>) on the categorical variable before passing to lm
+- Use lm(..., change_ref = c(<variable> = <new ref>)) to change the value 
+- Use reref(lm(...), change_ref = c(<variable> = <new ref>)) to change the value
 
--sum the number of NAs in dataframe and output vector (c)
--replace all missing values with NA in data
--impute missing values with 0 in dataframe 
--none of the above
--sum the number of NAs in colun and output vector
 
 9) What does the code snippet below perform?
 
@@ -86,9 +84,9 @@ pnorm(q=-0.77, lower.tail=TRUE)
 
 10) To utilize survival package's modeling capabilites how must your dataset be passed as arguement?
 
--as a tibble (c)
+-as a tibble 
 -as a dataframe
--as either tibble or dataframe
+-as either tibble or dataframe (c)
 -without missing data in any row
 -none of the above
 
