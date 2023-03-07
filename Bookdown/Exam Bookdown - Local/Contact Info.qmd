@@ -1,9 +1,0 @@
-# Contact Information {.unnumbered}
-
-Thank you for your involvement in the advancement of R Programming in the Open Source Community. For more information please utilize the below references:
-
--   [Quarterly Updates](https://www.r-consortium.org/newsletters)
-
--   [GitHub](https://github.com/RConsortium/R-Certification-WG)
-
-For any questions, inquiries or concerns please reach out to Joseph Korszun (joseph\@procogia.com).
