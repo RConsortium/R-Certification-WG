@@ -1,0 +1,47 @@
+06/16/21 Meeting Minutes
+Attendance: Joe Rickert, Kevin Bolger, Joseph Korszun, Mehar Pratap Singh, Mike Garcia, Rafael Kuttner, Kiernan Martin, Katherine Ostbye
+	- Joe R Consortium updates
+		○ Designated funding from R Consortium… set aside money for projects (_Direct funding_ vs general funding).
+			§ Companies can choose what they want to work on
+			§ This year would be prorated: July through end of year
+		○ Board will decide what working groups qualify
+		○ Groups need to need money: what is it being used for?
+			§ No reason why this group would not be eligible
+			§ But we need to know what we would use it for and how much we want
+			§ As membership grows more money will be available
+			§ Not once a lifetime… ICS funds more (e.g. R Validation Hub) - next round is in September (more substantial budget)
+				□ Mehar: Would we have to submit an ICS proposal? Joe: yes
+		○ Mehar: How would money fast track this process? Joe: think on it and write to me.
+
+	- Google doc review:
+		○ QC Process
+			§ Joe R: Doc should make reference to standards and work in other groups (e.g. CDISC reference and CDISC terminology, reference tables working group)
+			§ Joe R: there is this R stuff, there should be some SAS stuff too. We want a multi-lingual version of this: SAS section for R programmers. 
+			§ Joe K: overlap e.g. base packages for FDA
+			§ Joe R: PHUSE working group (Mike S and Mike ?) - taking on task of reconciling for certain statistical procedures what happens when you run in R and SAS with different answers. We should review what they are doing so we can point to it as possible. Kate: what is available for us to review? Joe R: will look himself.
+			§ Joe R: Tidyverse is okay. However, some packages aren't set up for tidyverse. E.g. plotting. We may have to make up recommendations for how to use this.
+				□ Tidy data structure may not apply to survival analysis.
+				□ Mehar: focus on the 80:20 - 80% of users will be using tidyverse and ggplot; some constraings on plots for clinical trials.
+				□ Tidyverse is the easiest starting point. 
+			§ Kieran: there is a lot to unpack in each of these.
+				□ Data wrangling is a lot of work.
+				□ Kate: we could go as deep as the SAS Certification process
+				□ Joe R: we are fine if we point to work that others are doing (especially stable stuff)
+					® Then focus on the glue
+		○ Mapping and Developing Datasets
+			§ Mike G: Cleaning in a separate dataset
+				□ Final model relying on one dataset
+				□ Filtering on pre-computed flags
+			§ Joe R: One-proc-away is a crude way of appxing what we can do in R. Makes intent, method, and what needs to be achieved separate 
+			§ Joe R: Look into R Tables for Regulatory Submission
+		○ Programming your TLF output
+			§ Kate: move the modelling here; two parts: modelling and report display
+			§ Mike: different steps
+			§ Kieran: think about which practices we need to preserve.
+
+TO Dos:
+	- Add SAS sections for each
+	- Add CDISC and other references everywhere possible
+	- Add a glossary for references that don't have documentation (more industry conventions than published guidelines)
+	- Add logs and log corollaries (Joe K.)
+	- https://mathewanalytics.com/logging-in-r-why-when-and-how/

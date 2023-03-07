@@ -1,0 +1,45 @@
+---
+title: "R_Cert_WG_Minutes_211013"
+author: "Kate Ostbye"
+date: "10/13/2021"
+output: html_document
+---
+Minutes by Kate Ostbye
+
+Attendees:
+* Joseph Rickert
+* Mehar Pratap Singh
+* Katherine M Ostbye
+* Rafael Kuttner
+* Kevin Bolger
+* Joseph Korszun
+
+Absent:
+* Kieran Martin
+* Mike Garcia
+
+Notes:
+
+Updated the R/Pharma R working group slide for R Certification WG. 
+Link: https://docs.google.com/presentation/d/1LYA36Geqvzt9snLyEKxVgXB2kbM-IQGo_pDQu8aVgJ4/edit#slide=id.gcb29baff87_0_5
+
+From last time:
+Kieran provided an outline for R Foundational Skills (upoloaded to github)
+Joseph K also provided an outline for R Modelling (uploaded to github) and is working on generating code.
+
+Discussion:
+Temptation to make it more elaborate and make a book out of it. Should we point to resources or write a book? 
+  We should keep it foundational and technical focused.
+For survival modelling: point to task view. 1-2 tutorials to point to on the modelling/statistics.
+Our focus should be on the technical approach and providing example code ("flavor"). 
+- strong statement as to data wrangling and graphics: tidyverse foudnational skills
+- table creation and manipulation: RTRS tie in; point to gt gtsummary as foundational skills; rtables open on github?
+
+Action Items:
+- add template docs to Github for remaining sections (Kate)
+- first draft of the Clinical Trials Overview section (Kate)
+- first draft outdata section (Rafi)
+
+Next meeting 10/29 at 11AM PT
+
+

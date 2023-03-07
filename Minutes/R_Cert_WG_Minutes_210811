@@ -1,0 +1,52 @@
+08/11/21:
+Updates from Joe R.
+Submissions WG:
+	- Moving forward with preparing for a pilot clinical trial
+	- See github page -- task boards
+	- Planning for 3 submissions (simple 2 packages with CDISC datasets; documentation from CDISC) - submit everything as a txt document; code, packages and txt docs -- over gateway ; instructions for how to unpack and FDA can access analysis;
+Tables WG:
+	- Working through a document with requirements
+	- Deciding what is absolutely necessary; reqs doc will include table of essentials and what R packages cover
+	- Which code should you actually use? Depends on what you want to do (tables vs visualizations)
+PHUSE WG: Clinical Reporting in a multi-lingual trial
+	- Linear, survival, mixed… differences between SAS and R
+	- Number of 'phenomenon' - judgement call to provide an estimate; SAS and R do different things (provide an estimator vs not); drives responsibility back to the statistician; should know (not depend) on the statistical packages output without knowing the default settings and assumptions
+		○ Teams https://teams.microsoft.com/_?tenantId=2e09e1c5-5c3d-4bca-97c4-573a5695f550#/files/General?threadId=19:0dbb2a0cb72744608e26b56f51e15214@thread.tacv2&ctx=channel
+		○ Joseph to ask for Access for a few of our team members
+		○ Examples to Github (Joseph Rickert to find link)
+		https://github.com/phuse-org/CSRMLW
+		
+
+CRAN 
+	- Changed exchange on github;
+	- Manifesto on github to Linux Foundation… 
+	https://github.com/cranchange/cran_change.org
+	- R Foundation directly with CRAN diplomatic? 
+	- New WG devoted to repository issues 
+		○ Timing of engaging between CRAN and FDA
+			§ CRAN doesn't want a lot of submissions
+			§ Holding off on updates to CRAN
+			§ But then FDA doesn't have what it needs…
+			§ Buffer strategy 
+		○ Joseph looks at new packages on CRAN monthly. Then looks at and analyzes new packages. Usually finds about 10-12 packages that are removed. Authors don't understand
+
+Kieran: Chinese Health Authorities may not allow submissions in R; usually CHA follows FDA; Roche trying to influence, reach out to people. Not sure if it's a strong/formal announcement - currently word of mouth.
+	Kieran to look into if there is more information.
+	
+CDISC and Background
+Expected Workflows:
+    Clean → Build Dataset → Analyze → Report
+(data steps, SQL) (merge, join, sql) (linear regression or other model) (proc report)
+	• SAS 
+	• R
+	• R examples
+		○ Use a Public CDISC study/datasets
+_______
+Financials side:
+	• goal is self-sustaining
+	• Outsourcing needs:
+		○ proctoring (see linux foundation)
+		○ Building the exam and checking it for accuracy (can search for companies that do this)
+		○ Curriculum design and training platform
+Joe: need to develop draft document or paper first before asking for financials
+Keiran: need to write out who exactly are our audience. 

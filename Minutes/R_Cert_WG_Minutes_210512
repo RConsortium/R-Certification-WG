@@ -1,0 +1,83 @@
+Attendance: Joe R., Kate O., Mike G., Kevin B. 
+
+Updates from Joe R on R Consortium WGs:
+R Validation Hub:
+
+R Consortium Updates:
+	- package wrapper -- pilot submission
+	- To do this, could R Cons be the sponsor? 
+	- R Cons is writing to the FDA and see if they can do it.
+
+R Tables WG:
+	- Lots of progress.
+	- Developing tables for different parts of a submission document.
+	- Using CDISC datasets
+	- Discussions around workflows
+
+PHUSE WG: 
+	- Mike Stackhouse
+	- Closest to what we are doing
+	- Clinical Reporting in a multilingual world
+	- SAS results vs R outputs for canonical analyses for clinical submissions (linear, mixed, MH tests, etc.)
+	- Methodology, results, documentation, others to follow….
+  - PHUSE seems to have a safety slant
+
+Overlap, energy, attention from Pharma in these efforts.
+
+Selecting an example workflow/process for training:
+
+Safety example
+	1. Raw data (clinical database) --> 
+	2. normalization (SDTM, internal standard) --> 
+	3. reporting standard (IND, Safety Monitoring)
+
+Actions
+	1. QC on the raw data --> 
+	2. mapping the data to "norm" / specifications --> 
+  3. programming of that dataset
+	4. annotate mocks --> 
+	5. programming of that TLF 
+
+Additional Actions:
+	1. Verification and double programming
+	2. Efficacy Example (vs Safety) for additional actions/processes (Kiernan)
+	3. Visualization: graphs and interactive reports (R Shiny)
+		a. Hands-on vs exec SAS programmer (why do I need to go from SAS to R)
+		b. Business case: 
+			i. Efficiency (Shiny vs SAS time to create/update)
+			ii. Effectiveness (correct visualization of data)
+	4. Maintenance
+		a. (Nadia Eghbal - open source)
+
+Take action into a module of sorts:
+- SAS QCs --> R QCs
+- Split out R technical differences vs Clinical trials operations/documentation (that wouldn’t be as familiar for R programmers)
+- Use sample datasets
+- Translation and Replication: we don't want to simply replicate the code a la SAS, but we want to find a balance between the process of what we use SAS to accomplish and the best practice for R, building good R code.
+
+R Certification:
+Certifying people to work in the Clinical Trials environment ("mixed language environment"). Things you should know:
+	- R technical points relevant to CTs
+	- CTs workflows and tie-ins to Programmatic efforts
+	- Relevant to a mixed-programming environment (need programmers to move from SAS to R to others (python))
+
+Is it for the team? For the individual?
+It's support for the process of transition out of SAS and into either mixed or R programmatic environments.
+
+R Cert is a piece of the bigger picture: how does this tie into the other working groups/teams.
+
+Assumptions of the playing field for R Certification
+	- Infrastructure set up
+	- Working with a set of authorized R Packages (point to R Validation Hub)
+
+WG Action Items:
+	- Move these notes to R Markdown doc on github (Kate)
+	- Move meeting to zoom (Mehar)
+	- Meet with Rafi, Mike and Joe (not Joe R) in interim to draft 
+	Actions
+		        1. QC --> 
+		        2. mapping the data to "norm" --> 
+		        3. mock annotated --> 
+		        4. programming of that TLF 
+            
+Review at June 9th meeting

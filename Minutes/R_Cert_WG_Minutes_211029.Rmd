@@ -1,0 +1,36 @@
+---
+title: "Minutes 10-29-21"
+author: "Joseph Rickert"
+date: "10/29/2021"
+output: html_document
+---
+
+## R Certification Working Group Minutes
+Minutes taken by Joseph Rickert
+
+### Attendees
+
+* Kaitlin Bustos
+* Mike Garcia
+* Rafael Kuttner
+* Joseph Rickert
+
+The group discussed the curriculum and decided we should probably consider adopting prerequisites for taking the certification course. Our working assumption is that SAS programmers currently working in a mixed language environment will have had some exposure to R and may be able to run code given to them, but will not be comfortable writing their own code.
+
+The group agreed that we that we do not need to develop all of the materials listed in the Foundational skills document fro scratch. For example, we could leverage the tidyverse training materials that are readily available.
+
+**Action Item**: Joe will research tidyverse training materials.
+
+It was agreed that Base R data manipulation material could probably be limited to indexing, subsetting, and the family of apply functions.
+
+Kaitlin suggested that the Certified AI Practitioner work of CertNexus would be a good model for our project to follow. See: https://certnexus.com/certification/caip/ for the overall structure of CertNexus certification and  look [here](https://certnexus.com/wp-content/uploads/2019/08/Certified-AI-Practitioner-Exam-AIP-110-Blueprint_Final_20190813.pdf) for an example exam.
+
+The group agreed that in addition to **Modeling** and **Curriculum** we should open up a third topic: **Certification Structure**.
+
+**Action Item**
+Kate to schedule the next meeting.
+
+
+
+
+

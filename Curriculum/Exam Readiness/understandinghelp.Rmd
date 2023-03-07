@@ -1,0 +1,121 @@
+---
+title: "Understanding help files"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Early on in understanding R, users will be pointed to help files. While this is always good advice, unfortunately R help files are not always the easiest file to parse. 
+
+In particular, the order information is presented is not usually the best way to read them, and key information on how the function works. Unfortunately for many base R functions, the way help has been written can vary quite dramatically!
+
+We will look at three help files today. They are all at the bottom of this document as they are quite large. The help files are `median`, `summary` and `grep` 
+
+When examining any help file we can look at different sections in the order described below
+
+### Description
+
+**Description** appears first, but is often not well populated; it often simply repeats information that was given above. 
+
+### Examples
+
+For more complex functions, the **Examples** section can help you understand with simple examples how the function operates. Examples can often be a good starting point when you are new to a function. They can help you see which inputs will work, and how you get outputs.
+
+
+## Details and Value
+
+Both **Details** and **Value** are not always present in R help, and are used inconsistently. However, typically the core information about the functions you are using is presented here, so this is where you should look first.
+
+In the case of `median`, **Details** gives some programming details. If you are not familiar with the concept of S3 methods this will probably be meaningless to you; effectively it is telling us that the median function will work for most inputs you give it. 
+
+**Value** normally tells us what the function will return. For `median` instance it tells us that we will return a value of length one, with the same type as the object presented, unless we calculated the median of a logical vector, in which case it will convert it into numeric.
+
+It also tells us how the function will handle missing data, by returning NA.
+
+Note that this last line helps us make sense of the section we can move to: **Arguments**.
+
+### Arguments
+
+**Arguments** tend to appear early on in a function, but don't always make sense without the context of the later sections. Having looked at **Value** we can see why the "na.rm" argument exists; it allows us to stop median returning NA if any values are missing when it calculates median.
+
+One common argument you will see in R functions are the "...". This allows an R function to take any number of names/unnamed arguments. These can be interpreted in a number of ways; sometimes different "methods" for handling data will take different arguments.
+
+For example, summary behaves differently depending on the type of data given to it. Examining **Value** for summary tells us that if we want to learn more we will need to look at the sub help pages for those methods
+
+### Methods
+
+Different methods may be defined for different inputs to a function. You can find out the names of these functions (and thus the link to their help page) by using `methods(<fnname>)`
+
+### Usage
+
+Under usage for summary, we can see some examples of how summary behaves differently, and the different arguments it takes. Unfortunately, not all help files for functions which behave differently include these; mean, for example, has several different methods which are not explicitly documented in the mean help.
+
+## Help pages with multiple functions
+
+Finally, probably the most complex help page can be a page for multiple functions.
+
+Sometimes, when documenting functions, because of a relationship between the functions, the authors have chosen to document those together. These can often be very difficult help files to understand. For probably the worst example, we can look at `grep`
+
+When encountering help files like this it can be very hard indeed to understand them!
+
+There are multiple things we need to pay attention to when understanding this page
+
+1) To grasp which function does what, we will need to go to the **Values** section which will describe how each function works
+2) We need to look carefully at the **Usage** session to understand which arguments can be used with which function, and which order they are in (unfortunately, sometimes the order changes between functions!)
+3) When reading **Arguments** we need to look carefully. These behave differently depending on which function we are using, so we will need to look for exceptions!
+4) There is an extensive examples section, which shows how you might use these functions. When starting, this may be our best bet to understand how to do things using these functions. 
+
+This is probably one of the most complicated help pages to read: the information is there, but it is not necessarily presented in the order you might expect!
+
+
+## Beyond base R
+
+As you begin using other R packages you will see a variety of help files. Often more modern packages, such as the tidyverse, may have a better structure, but will follow the core layout.
+
+In general, the principles of looking at **examples** for a brand new function, then reading the **value**/**details** section will probably produce the most value when consuming help pages.
+
+
+
+
+
+
+```{r, echo = F, include = F}
+helpfile <- utils:::.getHelpFile(help(median))
+outfile <- tempfile(fileext = ".html")
+tools:::Rd2HTML(helpfile, out = outfile)
+webshot::webshot(outfile, "images/median.png")
+
+```   
+## Help file for median 
+![](images/median.png)
+
+
+## Help file for summary
+
+```{r, echo = F, include = F}
+helpfile <- utils:::.getHelpFile(help(summary))
+outfile <- tempfile(fileext = ".html")
+tools:::Rd2HTML(helpfile, out = outfile)
+webshot::webshot(outfile, "images/summary.png")
+
+```   
+
+![](images/summary.png)
+
+
+## Help file for grep
+
+```{r, echo = F, include = F}
+helpfile <- utils:::.getHelpFile(help(grep))
+outfile <- tempfile(fileext = ".html")
+tools:::Rd2HTML(helpfile, out = outfile)
+webshot::webshot(outfile, "images/grep.png")
+
+```   
+
+![](images/grep.png)

@@ -1,0 +1,362 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+## R Cert Working Group-Modeling
+### Joseph Korszun
+
+## Library references
+```{r, results=FALSE, message=FALSE}
+#library references
+library(gtsummary) #tabulation summary
+library(utils) 
+library(dplyr)
+library(car) #levene test
+library(haven) #sas datasets xpt
+library(lme4) #mixed-effect modeling
+library(FrF2) #DOE
+library(rsm) #DOE
+library(survival)
+library(survminer) #for nicer plotting for KM curves
+
+#set working directory
+setwd("~/OneDrive - ProCogia/Desktop/R/R Cert Working Group/Code")
+
+#load data into R
+load('adsl.Rdata')
+
+#load submissions group data 
+adqs <- read_xpt("adqsadas.xpt") #linear model
+adqsnpix <- read_xpt("adqsnpix.xpt") #mixed-effects model
+
+#any of these below options 
+View(adsl)
+head(adsl)
+summary(adsl)
+
+
+```
+
+## Descriptive Statistics
+```{r, results=TRUE, warning=FALSE}
+#descriptive statistics
+#this package should be considered?
+#better alternative?
+library('psych')
+describe(adqs)
+
+```
+
+## Aggregation Summaries
+```{r, results=TRUE}
+## Aggregation Summaries
+group_by(adsl, SEX) %>%
+  summarise(
+    count = n(),
+    mean = mean(AGE, na.rm = TRUE),
+    sd = sd(AGE, na.rm = TRUE)
+  )
+
+```
+
+## Continuous Table summaries
+```{r, results=TRUE}
+#Continuous-Table summaries
+sub.df <- adsl %>% select(TRT01A, AGE, SEX)
+sub.df %>% tbl_summary(by=TRT01A, statistic = list(all_continuous() ~ "{mean} ({sd})",
+                       all_categorical() ~ "{n}/{N} ({p}%)"),
+                       digits = all_continuous() ~ 2) %>%
+  add_p(pvalue_fun = ~style_pvalue(.x, digits = 2))
+```
+
+## Cross Tabulation Summarie
+```{r, results=TRUE}
+#Cross Tabulation Summaries
+adsl %>%
+  tbl_cross(
+    row = SEX,
+    col = TRT01A,
+    percent = "cell"
+  ) %>%
+  add_p()
+```
+
+## T-tests
+```{r, results=TRUE}
+## T-tests
+adsl.t <- t.test(adsl$TRTDURD, y=NULL, alternative = c("two.sided"), mu=0, paired=FALSE,
+       var.equal = FALSE, conf.level = 0.95)
+# T-test output
+adsl.t
+```
+
+## ANOVA
+```{r, results=TRUE}
+## ANOVA
+adsl.aov <- aov(TRTDURD ~ TRT01A, data = adsl)
+
+#summary
+summary(adsl.aov)
+
+#Tukey HSD Test for pairwise summary
+TukeyHSD(adsl.aov)
+
+#residual plots for homogeneity 
+plot(adsl.aov, 1)
+
+#normality assumption met
+plot(adsl.aov, 2)
+
+#Pull residual data
+adsl_residuals <- residuals(object=adsl.aov)
+
+#Shapiro-Wilkes Test, normality not met
+shapiro.test(x = adsl_residuals)
+```
+
+## Statistical Tests
+```{r, results=TRUE, warning=FALSE}
+## Statistical Tests
+
+#Levene's Test for Equal Variances
+leveneTest(AGE ~ TRT01A, data = adsl)
+
+#Fisher exact test
+
+
+
+```
+
+## General Linear Modeling
+```{r, results=TRUE}
+## General Linear Modeling
+
+#subset data
+glm_sub <- filter(adqs,EFFFL == 'Y' & AVISIT == 'Week 24' & PARAMCD == 'ACTOT') 
+
+#build general linear model  
+linear_model <- glm(CHG ~ TRTPN + SITEGR1, data = glm_sub)
+
+#coefficients
+linear_model$coefficients
+
+#summary of results
+summary(linear_model)
+
+#95% confidence intervals for weights 
+confint(linear_model)
+
+#orthogonal effects 
+effects <-linear_model$effects
+
+#predicted values 
+predicted_values <- predict(linear_model, type='response')
+#linear_model$fitted.values
+
+#print out residuals of response
+residual_data <- residuals(linear_model, type='response')
+#linear_model$residuals
+
+#residual and predicted plots
+plot(predicted_values, main = "Predicted Values")
+plot(residual_data, main = "Residuals")
+```
+
+## Mixed-Modeling
+```{r, results=TRUE}
+## Mixed-Modeling
+#page 11 of 240
+mlm_sub <- filter(adqsnpix,EFFFL == 'Y' & AVISITN > 0 & PARAMCD == 'NPTOTMN' & ANL01FL=='Y') 
+
+#mixed-model with site effects
+melm <- lmer(AVAL~ (1|SITEGR1)+BASE+TRTPN,data=mlm_sub, REML = FALSE) #BASE dose for levels
+
+#summary
+summary(melm)
+
+#confidence intervals
+confint(melm)
+
+#random effects
+ranef(melm)
+
+#anova for melm
+anova(melm)
+
+#residuals
+melm_res <- residuals(melm)
+
+#predictions
+melm_pred <- predict(melm)
+
+#plots
+plot(melm_res, main = "MELM Rediduals")
+plot(melm_pred, main = "MELM Predicted")
+
+
+#Differences between R and SAS for mixed-effect modeling 
+
+
+
+```
+
+## Likelihood Estimates
+```{r, results=TRUE}
+## Likelihood Estimates 
+
+#Binomial Likelihood
+
+
+
+```
+
+## Covariate Adjustments
+```{r, results=TRUE}
+## Covariate Adjustments
+
+
+```
+
+## Sequential and Interim Analysis
+```{r, results=TRUE}
+## Sequential and Interim Analysis
+
+
+```
+
+## Survival Analysis
+```{r, results=TRUE}
+
+#lung from survival dataset as tibble
+as_tibble(lung)
+lung <- as_tibble(lung)
+lung
+
+
+#survival curve
+s <- Surv(lung$time, lung$status)
+head(lung)
+
+#fit survival curve 
+survfit(s~1)
+survfit(Surv(time, status)~1, data=lung)
+sfit <- survfit(Surv(time, status)~sex, data=lung)
+sfit
+
+summary(sfit)
+
+#follow up times for 
+summary(sfit, times=seq(0, 1000, 100))
+
+
+#Kaplan-Meier Plots
+sfit <- survfit(Surv(time, status)~sex, data=lung)
+ggsurvplot(sfit)
+
+
+ggsurvplot(sfit, conf.int=TRUE, pval=TRUE, risk.table=TRUE, 
+           legend.labs=c("Male", "Female"), legend.title="Sex",  
+           palette=c("dodgerblue2", "orchid2"), 
+           title="Kaplan-Meier Curve for Lung Cancer Survival", 
+           risk.table.height=.15)
+
+
+```
+
+
+## Bayesian Analysis
+```{r, results=TRUE}
+## Bayesian Analysis
+
+# packages for consideration: RJAGS, rstanarm, rstan, brms
+
+#Bayesian Power and Sample Size Tables
+
+#Markov Chain Monte Carlo (MCMC)
+
+
+
+
+```
+
+## Experimental Design
+```{r, results=TRUE}
+## Experimental Design
+
+## packages for consideration: FrF2, rsm
+
+##Full Factorial Design
+rm(list=ls())
+set.seed(12556)
+x <- FrF2::FrF2(nruns=16,nfactors=4, factor.names=paste("x",1:4,sep=""), ncenter=3, randomize=F) #design should be randomized
+
+x <- as.data.frame(x)
+x <- x[order(runif(nrow(x))),]
+x.uncoded <- data.frame(rsm::coded.data(x,temp~ 50*x1+100, cat~4*x2+4, stirrer~100*x3+100, conc~10*x4+10))# uncode
+cbind(x,x.uncoded)  # plot coded + uncoded design
+
+
+kappa(model.matrix(~(x1+x2+x3+x4)^2, data=x)) # kappa coded 
+
+kappa(model.matrix(~(temp +cat +stirrer+ conc)^2, data=x.uncoded)) # kappa uncoded
+
+kappa(model.matrix(~(temp +cat +stirrer+ conc)^2, data=data.frame(scale(x.uncoded)))) 
+
+
+
+# kappa on standardized uncoded data
+set.seed(1234)
+x$y  <- 10 + 2*x$x1 + 3*x$x2 + 5*x$x1*x$x2 + 5*x$x3^2 + rnorm(nrow(x),0,1)
+round(cor(model.matrix(~x1+x2+x3+x4+I(x1^2)+I(x2^2)+I(x3^2)+I(x4^2),data=x)[,-1]),2) # note confounding X^2
+
+
+#Summary Statistics
+summary(res1 <- lm(y~(x1+x2+x3+x4)^2, data=x))
+summary(res2 <- lm(y~(x1+x2+x3+x4)^2 + I(x1^2), data=x))
+summary(res3 <- lm(y~(x1+x2+x3+x4)^2 + I(x4^2), data=x))
+
+
+#plotting visuals 
+colcol<- rep("black",nrow(x))
+colcol[apply(abs(x[,1:4]),1,sum)==0]  <- "red"
+par(mfrow=c(1,2))
+
+plot(predict(res1), rstudent(res1), xlab=expression( paste("predicted response ", hat(y))), ylab="studentized residuals",type="n", 
+     main=expression(paste("(",frac(paste("y - ", hat(y)),sigma), ") ~ ", hat(y)))) 
+text(predict(res1), rstudent(res1),label=1:nrow(x), col=colcol) 
+abline(h=c(-2,0,2),lty=c(2,1,2))
+
+plot(predict(res2), rstudent(res2), xlab=expression( paste("predicted response ", hat(y)) ),ylab="studentized residuals",type="n", 
+     main=expression(paste("(",frac(paste("y - ", hat(y)),sigma), ") ~ ", hat(y))))
+text(predict(res2), rstudent(res2),label=1:nrow(x), col=colcol)
+abline(h=c(-2,0,2),lty=c(2,1,2))
+
+
+```
+
+
+
+## References/Tutorials
+
+
+### DOE
+[DOE Methods/Terminology](https://learnche.org/pid/design-analysis-experiments/index#)
+[DOE R Packages](https://cran.r-project.org/web/views/ExperimentalDesign.html)
+[DOE Full Factorial Design Tutorial](https://bookdown.org/gerhard_krennrich/doe_and_optimization/doe2.html#full-factorial-2k-designs)
+
+
+### Baysian
+[Bayesian Methods/Terminology]()
+[Bayesian R Packages](https://cran.r-project.org/web/views/Bayesian.html)
+[Bayesian Analysis Tutorial]()
+
+### Survival
+[Survival Methods/Terminology](https://towardsdatascience.com/survival-analysis-part-a-70213df21c2e)
+[Survival R Package](https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf)
+[Survival Analysis Tutorial](https://rviews.rstudio.com/2017/09/25/survival-analysis-with-r/)
+
+
+
+
+

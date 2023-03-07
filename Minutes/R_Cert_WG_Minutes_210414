@@ -1,0 +1,27 @@
+---
+title: "R_Certification_WG_Minutes_4-14-21"
+author: "Joseph Rickert"
+date: "4/14/2021"
+output: html_document
+---
+Minutes prepared by Joseph Rickert
+
+Attendees;
+Joseph Rickert - RStudio
+Mehar Pratap Singh - Procogia
+Kevin Bolger - Procogia
+Mike Garcia - Procogia
+Rafael Kuttner - Fred Hutch - SCHARP
+Kieran Martin - Roche
+
+Mehar opened the meeting and the attendees took a few minutes to introduce themselves. The initial discussion centered around the goals of the working group and challenges faced by biostatisticians working in multilanguage research and clinical trial organizations. The attendees present agreed that even if a company desired to transition completely to open source statistical programming languages, the transition would likely require several years of teams working multi-language environments where all team members would need some familiarity with legacy software. 
+
+When discussing the particular problem of making SAS programmers comfortable with R the attendees agreed that a goal should not be to reproduce SAS structures and tools in R, but to guide programmers trained in SAS towards embracing the R mindset of functional programming. Likewise, there was agreement that R programmers would need to understand the implications of the SAS macro infrastructure and the data step approach to creating algorithms in order to be effective in mixed language submission workflow.
+
+Kevin agreed to take a first cut of writing a document describing the conceptual landscape of a mixed language environment. 
+
+Joseph agreed to contact Katherine Ostbye. 
+
+The next meeting was set for 10AM Pacific Time on Wednesday, May 12, 2021.
+
+
